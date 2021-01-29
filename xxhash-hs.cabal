@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0481c4470a7215c5a9369fd75fdc0ec8df037745ae9e5cd1955a8ef9d080b605
+-- hash: 41ec7a3c7f1d736c1ee2152f3312e453ba73071e8c4ece963e30d279b89326a2
 
 name:           xxhash-hs
 version:        0.1.0.0
@@ -27,8 +27,8 @@ source-repository head
 
 library
   exposed-modules:
-      Data.Hash.XXHash
       Data.Hash.XXHash.Internal
+      Data.Hash.XXHash3
       Lib
   other-modules:
       Paths_xxhash_hs
