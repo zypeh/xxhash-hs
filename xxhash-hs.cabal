@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 41ec7a3c7f1d736c1ee2152f3312e453ba73071e8c4ece963e30d279b89326a2
+-- hash: e4bed9bf259fa64efe6799fd11a86a7193b52f8fb4ca8e5bb71653c62ed4d7c2
 
 name:           xxhash-hs
 version:        0.1.0.0
@@ -35,10 +35,10 @@ library
   hs-source-dirs:
       src
   include-dirs:
-      xxHash-0.8
+      xxHash
   c-sources:
-      xxHash-0.8/xxhash.c
-      xxHash-0.8/xxhash.h
+      xxHash/xxhash.c
+      xxHash/xxhash.h
   build-depends:
       base >=4.7 && <5
     , bytestring

@@ -26,9 +26,9 @@ dependencies:
 library:
   source-dirs: src
   c-sources:
-    - xxHash-0.8/xxhash.c
-    - xxHash-0.8/xxhash.h
-  include-dirs: xxHash-0.8
+    - xxHash/xxhash.c
+    - xxHash/xxhash.h
+  include-dirs: xxHash
 
 tests:
   xxhash-hs-test:
