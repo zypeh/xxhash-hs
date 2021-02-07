@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e4bed9bf259fa64efe6799fd11a86a7193b52f8fb4ca8e5bb71653c62ed4d7c2
+-- hash: ca65476bb0d5606255e2e25ca1f319235ce4b415b6fd9e8d451d624e45261d1c
 
 name:           xxhash-hs
 version:        0.1.0.0
@@ -27,21 +27,39 @@ source-repository head
 
 library
   exposed-modules:
-      Data.Hash.XXHash.Internal
-      Data.Hash.XXHash3
+      Data.Hash.XXH3
       Lib
   other-modules:
       Paths_xxhash_hs
   hs-source-dirs:
       src
+  ghc-options: -Wall -Wno-missing-signatures -Wno-name-shadowing -Wno-unused-do-bind -Wno-unused-matches -Wno-partial-type-signatures -O2
   include-dirs:
       xxHash
-  c-sources:
-      xxHash/xxhash.c
-      xxHash/xxhash.h
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
+  default-language: Haskell2010
+
+executable bench
+  main-is: Main.hs
+  other-modules:
+      Paths_xxhash_hs
+  hs-source-dirs:
+      bench
+  ghc-options: -Wall -Wno-missing-signatures -Wno-name-shadowing -Wno-unused-do-bind -Wno-unused-matches -Wno-partial-type-signatures -O2 -rtsopts
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , binary
+    , bytestring
+    , gauge
+    , hashable
+    , random
+    , xxhash
+    , xxhash-hs
   default-language: Haskell2010
 
 test-suite xxhash-hs-test
@@ -51,9 +69,11 @@ test-suite xxhash-hs-test
       Paths_xxhash_hs
   hs-source-dirs:
       test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wno-missing-signatures -Wno-name-shadowing -Wno-unused-do-bind -Wno-unused-matches -Wno-partial-type-signatures -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
     , xxhash-hs
   default-language: Haskell2010

@@ -20,15 +20,39 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/githubuser/xxhash-hs#readme>
 
 dependencies:
+- array
 - base >= 4.7 && < 5
+- binary
 - bytestring
+
+ghc-options:
+  - -Wall
+  - -Wno-missing-signatures
+  - -Wno-name-shadowing
+  - -Wno-unused-do-bind
+  - -Wno-unused-matches
+  - -Wno-partial-type-signatures
+  - -O2
 
 library:
   source-dirs: src
-  c-sources:
-    - xxHash/xxhash.c
-    - xxHash/xxhash.h
+  # c-sources:
+  #   - xxHash/xxhash.c
+  #   - xxHash/xxhash.h
   include-dirs: xxHash
+
+executables:
+  bench:
+    source-dirs: bench
+    main: Main.hs
+    dependencies:
+      - gauge
+      - xxhash-hs
+      - random
+      - hashable
+      - xxhash
+    ghc-options:
+      - -rtsopts
 
 tests:
   xxhash-hs-test:
