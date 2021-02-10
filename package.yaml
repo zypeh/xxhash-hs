@@ -24,6 +24,7 @@ dependencies:
 - base >= 4.7 && < 5
 - binary
 - bytestring
+- wide-word
 
 ghc-options:
   - -Wall
