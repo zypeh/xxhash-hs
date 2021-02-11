@@ -10,7 +10,4 @@ There are a few haskell xxhash package in hackage, and here is the comparison of
 
 Both of them are missing the XXHash3 variant which got its API stabled recently.
 
-### What am I going to do
-- Learn and ~~steal~~ implement optimization techniques from `xxhash-ffi` and implement more instances like `Hashable`.
-
-- Implement a hashmap using this library.
+## This repo contains the undone pure Haskell XXH3 implementation which only accepts input shorter than 241 bytes.
