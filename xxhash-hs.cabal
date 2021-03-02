@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d2bcb8548102f992cf4564587860fb05e04e0fdbfb62b7b7db159bfe2e9b5a71
+-- hash: 9ef291cb820c556e766557f196c8e90dff620882fbff056a8816de7db10d4f6e
 
 name:           xxhash-hs
 version:        0.1.0.0
@@ -50,7 +50,7 @@ executable bench
       Paths_xxhash_hs
   hs-source-dirs:
       bench
-  ghc-options: -Wall -Wno-missing-signatures -Wno-name-shadowing -Wno-unused-do-bind -Wno-unused-matches -Wno-partial-type-signatures -O2 -rtsopts
+  ghc-options: -Wall -Wno-missing-signatures -Wno-name-shadowing -Wno-unused-do-bind -Wno-unused-matches -Wno-partial-type-signatures -O2 -rtsopts -O2
   build-depends:
       array
     , base >=4.7 && <5
@@ -58,6 +58,7 @@ executable bench
     , bytestring
     , gauge
     , hashable
+    , primitive
     , random
     , wide-word
     , xxhash

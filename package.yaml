@@ -47,6 +47,8 @@ executables:
     source-dirs: bench
     main: Main.hs
     dependencies:
+      - bytestring
+      - primitive
       - gauge
       - xxhash-hs
       - random
@@ -54,6 +56,7 @@ executables:
       - xxhash
     ghc-options:
       - -rtsopts
+      - -O2
 
 tests:
   xxhash-hs-test:
